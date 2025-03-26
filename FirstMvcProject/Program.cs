@@ -29,6 +29,10 @@ namespace FirstMvcProject
             #endregion
 
             var app= builder.Build();
+            app.UseRouting();
+
+            app.UseStaticFiles(); //To access all the objects in the wwwroot
+
             #region Configure Http Request
             if (app.Environment.IsDevelopment())
             {
@@ -81,7 +85,6 @@ namespace FirstMvcProject
                 name: "JO",
                 //here i added the name and note that i have to add the (?) to the id to work properly 
                 //or i can remove the name and the url be like this https://localhost:7120/movies/Getmovie/55?name=ccc  and work 
-                pattern: "{Controller}/{action}/{id?}"//here i set a default values for the controller and the action
                                                                      //constraints: new { id = new IntRouteConstraint() }
                 /*constraints: new { id = @"^\d{2}" }*/ //to force that the id two digits
                 );
@@ -145,9 +148,46 @@ namespace FirstMvcProject
             #endregion
             #endregion
 
+            #region Client Side Library
+            //We will use Bootstrap forms to get the Front-end resources 
+            //LibMan=>(Library Manger) its a Client Side Library aquistion tool  
+            //OR From 
+            //CDN
+            //To Add it (right click on the project name => Add=> Add client side Library)
+            //From css Choose 
+            //bootstrap.css
+            //bootstrap.css.map
+            //bootstrap.min.css
+            //bootstrap.min.css.map
+            //And From js choose
+            //js bootstrap.bundle.js
+            //js bootstrap.bundle.js.map
+            //js bootstrap.bundle.min.js
+            //js bootstrap.bundle.min.js.map
 
+            //Make sure that the target location is wwwroot/....
+            //in this folder the shape of it will be like the globe 
+            //in this folder will put all the client side library and data like pictures ...
 
+            #endregion
 
+            #region Views 
+            //The view handels the app data presentation and user interaction 
+            //its an html template with embedded razor markup
+            //For every controller make a folder inside the views folder 
+            //I reach the index by baseUrl+Home+Index
+            //in the view if i want to write a c# code (@The code)
+            //if i want to write multiple lines of code (@{the code})
+            //Badding the space between the text and the element 
+            //Margin the space between the Elements
+            //Layout is used to reduce the code repetition & manage reusable parts of the views
+            //can have multiple layoutsd
+            //View start is a special file there is only one in the project 
+            //put in it the most used layout 
+
+            #endregion
+
+            
             app.Run();
         }
     }

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <header class="mt-5">
+        <center>
+            <nav>
+                <a href="/Home/Index" class="btn btn-primary m-2">Home</a>
+                <a href="/Home/Privacy" class="btn btn-warning m-2">Privacy</a>
+                <a href="/Home/AboutUs" class="btn btn-success m-2">About</a>
+                <a href="/Home/ContaceUs" class="btn btn-secondary m-2">Contact Us</a>
+
+
+                <button onclick="window.location.href='/Account/SignIn'" class="btn btn-info m-2">Sign In</button>
+                <button onclick="window.location.href='/Account/Register'" class="btn btn-danger m-2">Register</button>
+
+            </nav>
+        </center>
+
+    </header> 
+    <div>
+        @RenderBody()
+    </div>
+
+    @* start Footer*@
+    <footer>
+        <center>
+            <div class="mt-2">
+                <p>
+                    CopyRights &copy; Route @DateTime.Now.Year
+                </p>
+                </div>
+        </center>
+    </footer>
+    @* End Footer *@
+</body>
+</html>
