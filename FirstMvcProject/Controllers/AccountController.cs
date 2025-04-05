@@ -4,7 +4,7 @@ namespace FirstMvcProject.Controllers
 {
     public class AccountController : Controller
     {
-        public IActionResult SignIn()
+        public IActionResult SignIn(int id,string name)
         {
             return View();
         }

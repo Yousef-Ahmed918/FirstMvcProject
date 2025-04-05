@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -13,13 +13,19 @@
     <header class="mt-5">
         <center>
             <nav>
+                @* 1)HTML Tag *@
                 <a href="/Home/Index" class="btn btn-primary m-2">Home</a>
+                @* 2)HTML Helper *@ 
+                @Html.ActionLink("Home", "Index", "Home", null, new {@class="btn btn-warning m-2"})
                 <a href="/Home/Privacy" class="btn btn-warning m-2">Privacy</a>
+                
+                <a href="/Home/AboutUs" class="btn btn-success m-2">About</a>
                 <a href="/Home/AboutUs" class="btn btn-success m-2">About</a>
                 <a href="/Home/ContaceUs" class="btn btn-secondary m-2">Contact Us</a>
 
 
-                <button onclick="window.location.href='/Account/SignIn'" class="btn btn-info m-2">Sign In</button>
+                @* 3)Tag Helper *@ 
+                <a asp-controller="Account" asp-action="SignIn" asp-route-id="15" asp-route-name="Jo" class="btn btn-info m-2">Sign In</a>
                 <button onclick="window.location.href='/Account/Register'" class="btn btn-danger m-2">Register</button>
 
             </nav>

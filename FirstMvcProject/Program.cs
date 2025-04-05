@@ -83,9 +83,10 @@ namespace FirstMvcProject
             //The name is only for understanding doesnt affect the proccess
             app.MapControllerRoute(
                 name: "JO",
+                pattern: "{Controller=Home}/{action=Index}/{id:int?}"
                 //here i added the name and note that i have to add the (?) to the id to work properly 
                 //or i can remove the name and the url be like this https://localhost:7120/movies/Getmovie/55?name=ccc  and work 
-                                                                     //constraints: new { id = new IntRouteConstraint() }
+                //constraints: new { id = new IntRouteConstraint() }
                 /*constraints: new { id = @"^\d{2}" }*/ //to force that the id two digits
                 );
 
